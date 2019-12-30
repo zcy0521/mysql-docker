@@ -8,7 +8,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 # 添加自定义配置
-git clone https://github.com/zcy0521/mysql-server.git
+git clone https://github.com/zcy0521/mysql-docker.git
 vi conf.d/mysql.cnf
 
 # 运行 nginx
