@@ -40,9 +40,7 @@ sudo docker rm mysql
 
 [历史版本](https://downloads.mysql.com/archives/community/)
 
-- MySQL 5.5
-
-[https://dev.mysql.com/doc/refman/5.5/en/windows-install-archive.html](https://dev.mysql.com/doc/refman/5.5/en/windows-install-archive.html)
+- [MySQL 5.5 安装](https://dev.mysql.com/doc/refman/5.5/en/windows-install-archive.html)
 
 ```shell script
 # 编辑 my.ini
@@ -65,9 +63,7 @@ C:\> net start MySQL55
 C:\> "C:\Program Files\MySQL\MySQL Server 5.5\bin\mysql" -u root -p
 ```
 
-- MySQL 5.6 安装
-
-[https://dev.mysql.com/doc/refman/5.6/en/windows-install-archive.html](https://dev.mysql.com/doc/refman/5.6/en/windows-install-archive.html)
+- [MySQL 5.6 安装](https://dev.mysql.com/doc/refman/5.6/en/windows-install-archive.html)
 
 ```shell script
 # 编辑 my.ini
@@ -90,9 +86,7 @@ C:\> net start MySQL56
 C:\> "C:\Program Files\MySQL\MySQL Server 5.6\bin\mysql" -u root -p
 ```
 
-- MySQL 5.7  安装
-
-[https://dev.mysql.com/doc/refman/5.7/en/windows-install-archive.html](https://dev.mysql.com/doc/refman/5.7/en/windows-install-archive.html)
+- [MySQL 5.7  安装](https://dev.mysql.com/doc/refman/5.7/en/windows-install-archive.html)
 
 ```shell script
 # 编辑 my.ini **5.7.18版本开始不再提供 `my-default.ini` 需要新建**
@@ -138,9 +132,7 @@ C:\> mysqld --remove MySQL5X
 
 [历史版本](https://downloads.mysql.com/archives/community/)
 
-- MySQL 5.5
-
-[https://dev.mysql.com/doc/refman/5.5/en/binary-installation.html](https://dev.mysql.com/doc/refman/5.5/en/binary-installation.html)
+- [MySQL 5.5 安装](https://dev.mysql.com/doc/refman/5.5/en/windows-install-archive.html)
 
 ```shell script
 # 卸载 `mariadb`
@@ -185,9 +177,7 @@ $ cd /usr/local/mysql
 $ bin/mysql -u root -p
 ```
 
-- MySQL 5.6
-
-[https://dev.mysql.com/doc/refman/5.6/en/binary-installation.html](https://dev.mysql.com/doc/refman/5.6/en/binary-installation.html)
+- [MySQL 5.6 安装](https://dev.mysql.com/doc/refman/5.6/en/windows-install-archive.html)
 
 ```shell script
 # 卸载 `mariadb`
@@ -227,9 +217,7 @@ $ bin/mysql -u root -p
 
 > 不用将 `my.cnf` 复制到 `/etc` 目录中，在初始化数据目录时，会在/mysql目录中生成my.cnf
 
-- MySQL 5.7 安装
-
-[https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html](https://dev.mysql.com/doc/refman/5.7/en/binary-installation.html)
+- [MySQL 5.7  安装](https://dev.mysql.com/doc/refman/5.7/en/windows-install-archive.html)
 
 ```shell script
 # 卸载 `mariadb`
