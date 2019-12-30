@@ -1,10 +1,38 @@
 # MySQL
 
+## Usage
+
+```shell script
+# 安装docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# 添加自定义配置
+git clone https://github.com/zcy0521/mysql-server.git
+vi conf.d/mysql.cnf
+
+# 运行 nginx
+sudo docker pull mysql
+sudo docker-compose -f stack.yml up -d
+```
+
+## Docker
+
+[Docker Hub](https://hub.docker.com/_/mysql)
+
+```shell script
+sudo docker pull mysql
+sudo docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_ROOT_HOST=% -p 3306:3306 mysql
+sudo docker exec -it mysql bash
+sudo docker stop mysql
+sudo docker rm mysql
+```
+
+## Windows host
+
 [最新版本](https://dev.mysql.com/downloads/mysql/)
 
 [历史版本](https://downloads.mysql.com/archives/community/)
-
-## Windows host
 
 - MySQL 5.5
 
@@ -99,6 +127,10 @@ C:\> mysqld --remove MySQL5X
 ```
 
 ## Linux host
+
+[最新版本](https://dev.mysql.com/downloads/mysql/)
+
+[历史版本](https://downloads.mysql.com/archives/community/)
 
 - MySQL 5.5
 
@@ -270,73 +302,4 @@ $ rm -r /usr/local/mysql
 
 # 删除/etc/init.d/mysql.server
 $ rm /etc/init.d/mysql.server
-```
-
-## Docker
-
-[Docker Hub](https://hub.docker.com/r/mysql/mysql-server)
-
-[MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html)
-
-### docker
-
-```shell script
-$ sudo docker pull mysql/mysql-server
-
-$ sudo docker run \
-  -d \
-  --name mysql \
-  -p 3306:3306 \
-  --mount type=bind,src=/mysql/my.cnf,dst=/etc/my.cnf \
-  --mount type=bind,src=/mysql/datadir,dst=/var/lib/mysql \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_ROOT_HOST=% \
-  mysql/mysql-server
-```
-
-### docker-compose
-
-- install
-
-[Install Docker Compose](https://docs.docker.com/compose/install/)
-
-```shell script
-$ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
-```
-
-- stack.yml
-
-```yaml
-version: '3.1'
-
-services:
-  mysql:
-    image: mysql/mysql-server
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    hostname: mysql
-    container_name: mysql
-    ports:
-      - 3306:3306
-    volumes:
-      - ${HOME}/appdata/mysql/datadir:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_ROOT_HOST=%
-
-  adminer:
-    image: adminer
-    restart: always
-    hostname: adminer
-    container_name: adminer
-    ports:
-      - 13306:8080
-```
-
-- 运行
-
-```shell script
-$ sudo docker-compose -f stack.yml up -d
-$ sudo docker exec -it mysql bash
 ```
