@@ -11,9 +11,15 @@ sudo chmod +x /usr/local/bin/docker-compose
 git clone https://github.com/zcy0521/mysql-docker.git
 vi conf.d/mysql.cnf
 
-# 运行 nginx
+# 运行 mysql adminer
 sudo docker pull mysql
 sudo docker-compose -f stack.yml up -d
+
+# 访问 adminer
+http://localhost:8080
+服务器: mysql
+用户名: root
+密码:   root
 ```
 
 ## Docker
