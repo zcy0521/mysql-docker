@@ -278,7 +278,7 @@ $ rm /etc/init.d/mysql.server
 
 [MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/docker-mysql-getting-started.html)
 
-### run
+### docker
 
 ```shell script
 $ sudo docker pull mysql/mysql-server
