@@ -6,7 +6,7 @@
 
 ```shell script
 git clone https://github.com/zcy0521/mysql-docker.git
-vi conf.d/mysql.cnf
+cd mysql-docker
 sudo docker pull mysql
 sudo docker-compose up -d
 ```
