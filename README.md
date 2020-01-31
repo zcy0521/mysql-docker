@@ -2,29 +2,47 @@
 
 ## Usage
 
-```shell script
-# 安装docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+- 运行 msql
 
-# 添加自定义配置
+```shell script
 git clone https://github.com/zcy0521/mysql-docker.git
 vi conf.d/mysql.cnf
-
-# 运行 mysql adminer
 sudo docker pull mysql
-sudo docker-compose -f stack.yml up -d
+sudo docker-compose up -d
+```
 
-# 访问 adminer
-http://localhost:8080
-服务器: mysql
-用户名: root
-密码:   root
+- 配置 `mysql.cnf`
+
+```shell script
+vi conf.d/mysql.cnf
+sudo docker restart mysql
 ```
 
 ## Docker
 
-[Docker Hub](https://hub.docker.com/_/mysql)
+- [Get Docker Engine - Community for Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
+
+```shell script
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo docker run hello-world
+```
+  
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+```shell script
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+## MySQL
+
+- [Docker Hub](https://hub.docker.com/_/mysql)
 
 ```shell script
 sudo docker pull mysql
@@ -34,7 +52,7 @@ sudo docker stop mysql
 sudo docker rm mysql
 ```
 
-## Windows host
+### Windows host
 
 [最新版本](https://dev.mysql.com/downloads/mysql/)
 
@@ -126,7 +144,7 @@ C:\> net stop MySQL5X
 C:\> mysqld --remove MySQL5X
 ```
 
-## Linux host
+### Linux host
 
 [最新版本](https://dev.mysql.com/downloads/mysql/)
 
