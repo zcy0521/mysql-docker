@@ -5,6 +5,7 @@
 - 运行 msql
 
 ```shell script
+cd ~/Docker
 git clone https://github.com/zcy0521/mysql-docker.git
 sudo docker pull mysql
 sudo docker-compose up -d
