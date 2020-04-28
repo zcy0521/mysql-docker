@@ -1,22 +1,5 @@
 # MySQL
 
-## Usage
-
-- 运行 msql
-
-```shell script
-git clone https://github.com/zcy0521/mysql-docker.git
-sudo docker pull mysql
-sudo docker-compose up -d
-```
-
-- 配置 `mysql.cnf`
-
-```shell script
-vi conf.d/mysql.cnf
-sudo docker restart mysql
-```
-
 ## Docker
 
 - [Get Docker Engine - Community for Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
@@ -37,6 +20,23 @@ sudo docker run hello-world
 ```shell script
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+```
+
+## Usage
+
+- 运行 msql
+
+```shell script
+git clone https://github.com/zcy0521/mysql-docker.git
+sudo docker pull mysql
+sudo docker-compose up -d
+```
+
+- 配置 `mysql.cnf`
+
+```shell script
+vi conf.d/mysql.cnf
+sudo docker restart mysql
 ```
 
 ## MySQL Docker
